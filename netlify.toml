@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm run build"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# The Next.js Netlify plugin generates the required serverless handlers
+# and routing for SSR pages and API routes.
+# Keep publish directory unmanaged to avoid overriding plugin defaults.
