@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 pt-8 lg:px-8">
           <ErrorState
             message={trendingError}
-            hint="Check MOVIE_API_KEY in your .env.local file if this keeps happening."
+            hint="Check MOVIE_API_KEY or NEXT_PUBLIC_MOVIE_API_KEY in your Netlify environment variables if this keeps happening."
             onRetry={() => setTrendingRetryToken((value) => value + 1)}
           />
         </div>

@@ -1,10 +1,11 @@
 [build]
   command = "pnpm run build"
-  publish = ".netlify/output" 
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[functions]
+  node_bundler = "esbuild"
 
-# The Next.js Netlify plugin generates the required serverless handlers
-# and routing for SSR pages and API routes.
-# Keep publish directory unmanaged to avoid overriding plugin defaults.
+# Optional static-export fallback (disabled by default).
+# Use this context only for fully static deploys (no SSR/API routes):
+# [context.static-export]
+#   command = "NETLIFY_NEXT_EXPORT=true pnpm run build"
+#   publish = "out"
