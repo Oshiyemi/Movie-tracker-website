@@ -124,8 +124,8 @@ export default function HomePage() {
       try {
         const endpoint =
           selectedGenre === 'all'
-            ? `/api/popular?type=movie&page=${page}`
-            : `/api/discover?genre=${selectedGenre}&page=${page}`
+            ? `/api/movies?page=${page}`
+            : `/api/movies?genre=${selectedGenre}&page=${page}`
 
         const data = await fetchJson(endpoint, { signal: controller.signal }, { dedupe: false })
         const items = Array.isArray(data.results) ? data.results : []
@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 pt-8 lg:px-8">
           <ErrorState
             message={trendingError}
-            hint="Check MOVIE_API_KEY or NEXT_PUBLIC_MOVIE_API_KEY in your Netlify environment variables if this keeps happening."
+            hint="Check MOVIE_API_KEY in your environment variables if this keeps happening."
             onRetry={() => setTrendingRetryToken((value) => value + 1)}
           />
         </div>

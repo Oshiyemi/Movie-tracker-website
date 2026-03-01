@@ -15,11 +15,9 @@ Create `.env.local`:
 
 ```bash
 MOVIE_API_KEY=YOUR_SERVER_SIDE_TMDB_KEY
-NEXT_PUBLIC_MOVIE_API_KEY=YOUR_PUBLIC_TMDB_KEY_IF_NEEDED
 ```
 
-- `MOVIE_API_KEY` is preferred for server/API-route usage.
-- `NEXT_PUBLIC_MOVIE_API_KEY` is available in browser bundles when public access is intentionally required.
+- `MOVIE_API_KEY` is used server-side in API routes and never exposed to the client bundle.
 
 ## Build and run
 
@@ -43,6 +41,5 @@ Use this only if you intentionally disable SSR/API routes.
 - Publish directory: leave empty (do not set manually)
 - Environment variables:
   - `MOVIE_API_KEY`
-  - `NEXT_PUBLIC_MOVIE_API_KEY` (only if browser-side usage is required)
 
 `netlify.toml` already avoids publish overrides so Netlify's Next.js adapter can manage SSR/API output.

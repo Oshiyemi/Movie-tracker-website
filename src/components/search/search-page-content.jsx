@@ -181,7 +181,7 @@ export function SearchPageContent() {
       ) : error ? (
         <ErrorState
           message={error}
-          hint="Check MOVIE_API_KEY or NEXT_PUBLIC_MOVIE_API_KEY and try again."
+          hint="Check MOVIE_API_KEY and try again."
           onRetry={() => setRetryToken((value) => value + 1)}
         />
       ) : hasQuery && results.length === 0 ? (
